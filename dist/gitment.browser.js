@@ -80,7 +80,7 @@ Object.defineProperty(exports, "__esModule", {
 var LS_ACCESS_TOKEN_KEY = exports.LS_ACCESS_TOKEN_KEY = 'gitment-comments-token';
 var LS_USER_KEY = exports.LS_USER_KEY = 'gitment-user-info';
 
-var NOT_INITIALIZED_ERROR = exports.NOT_INITIALIZED_ERROR = new Error('怕不是要评论一哈？');
+var NOT_INITIALIZED_ERROR = exports.NOT_INITIALIZED_ERROR = new Error('Comments Not Initialized');
 
 /***/ }),
 /* 1 */
@@ -3489,7 +3489,7 @@ function renderHeader(_ref, instance) {
     return reaction.content === 'heart' && reaction.user.login === user.login;
   });
   likeButton.className = 'gitment-header-like-btn';
-  likeButton.innerHTML = '\n    ' + _icons.heart + '\n    ' + (likedReaction ? 'Unlike' : 'Like') + '\n    ' + (meta.reactions && meta.reactions.heart ? ' \u2022 <strong>' + meta.reactions.heart + '</strong> Liked' : '') + '\n  ';
+  likeButton.innerHTML = '\n    ' + _icons.heart + '\n    ' + (likedReaction ? '我觉得OK' : '我觉得不行') + '\n    ' + (meta.reactions && meta.reactions.heart ? ' \u2022 <strong>' + meta.reactions.heart + '</strong> \u8BC4\u59D4\u89C9\u5F97OK' : '') + '\n  ';
 
   if (likedReaction) {
     likeButton.classList.add('liked');
@@ -3505,7 +3505,7 @@ function renderHeader(_ref, instance) {
   container.appendChild(likeButton);
 
   var commentsCount = document.createElement('span');
-  commentsCount.innerHTML = '\n    ' + (meta.comments ? ' \u2022 <strong>' + meta.comments + '</strong> Comments' : '') + '\n  ';
+  commentsCount.innerHTML = '\n    ' + (meta.comments ? ' \u2022 <strong>' + meta.comments + '</strong> \u8BC4\u59D4' : '') + '\n  ';
   container.appendChild(commentsCount);
 
   var issueLink = document.createElement('a');
@@ -3545,7 +3545,7 @@ function renderComments(_ref2, instance) {
           alert(e);
         });
       };
-      initButton.innerText = 'Initialize Comments';
+      initButton.innerText = '怕不是要点一哈!';
       initHint.appendChild(initButton);
       errorBlock.appendChild(initHint);
     } else {
@@ -3555,14 +3555,14 @@ function renderComments(_ref2, instance) {
     return container;
   } else if (comments === undefined) {
     var loading = document.createElement('div');
-    loading.innerText = 'Loading comments...';
+    loading.innerText = '加载中...';
     loading.className = 'gitment-comments-loading';
     container.appendChild(loading);
     return container;
   } else if (!comments.length) {
     var emptyBlock = document.createElement('div');
     emptyBlock.className = 'gitment-comments-empty';
-    emptyBlock.innerText = 'No Comment Yet';
+    emptyBlock.innerText = '怕不是要评论一哈？';
     container.appendChild(emptyBlock);
     return container;
   }
