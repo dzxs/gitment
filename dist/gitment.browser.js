@@ -3975,7 +3975,7 @@ var Gitment = function () {
     key: 'loginLink',
     get: function get() {
       var oauthUri = 'https://github.com/login/oauth/authorize';
-      var redirect_uri = this.oauth.redirect_uri || window.location.href;
+      var redirect_uri = this.oauth.redirect_uri || 'https://dzxs.github.io' + window.location.pathname;
 
       var oauthParams = Object.assign({
         scope: scope,
