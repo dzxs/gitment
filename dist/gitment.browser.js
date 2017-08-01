@@ -4044,10 +4044,10 @@ var Gitment = function () {
       var replacedUrl = '' + window.location.origin + window.location.pathname + search + window.location.hash;
       history.replaceState({}, '', replacedUrl);
 
-      // Object.assign(this, {
-      //   id: replacedUrl,
-      //   link: replacedUrl,
-      // }, options)
+      Object.assign(this, {
+        id: replacedUrl,
+        link: replacedUrl
+      }, options);
 
       this.state.user.isLoggingIn = true;
       _utils.http.post('https://hi.huxijob.com', {
