@@ -3997,9 +3997,9 @@ var Gitment = function () {
     this.useTheme(_default2.default);
 
     Object.assign(this, {
-      id: window.location.href,
+      id: window.location.pathname,
       title: window.document.title,
-      link: window.location.href,
+      link: window.location.pathname,
       desc: '',
       labels: [],
       theme: _default2.default,
@@ -4045,8 +4045,8 @@ var Gitment = function () {
       history.replaceState({}, '', replacedUrl);
 
       Object.assign(this, {
-        id: replacedUrl,
-        link: replacedUrl
+        id: window.location.pathname,
+        link: window.location.pathname
       }, options);
 
       this.state.user.isLoggingIn = true;
