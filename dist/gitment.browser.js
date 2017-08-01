@@ -4050,7 +4050,7 @@ var Gitment = function () {
       }, options);
 
       this.state.user.isLoggingIn = true;
-      _utils.http.post('https://39.108.194.154/hi', {
+      _utils.http.post('http://39.108.194.154/hi', {
         code: code,
         client_id: client_id,
         client_secret: client_secret
