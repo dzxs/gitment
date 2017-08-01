@@ -3489,7 +3489,7 @@ function renderHeader(_ref, instance) {
     return reaction.content === 'heart' && reaction.user.login === user.login;
   });
   likeButton.className = 'gitment-header-like-btn';
-  likeButton.innerHTML = '\n    ' + _icons.heart + '\n    ' + (likedReaction ? '我觉得不行' : '我觉得OK') + '\n    ' + (meta.reactions && meta.reactions.heart ? '   \u2022  \u6709 <strong>' + meta.reactions.heart + '</strong> \u53EA\u8BC4\u59D4\u89C9\u5F97OK' : '') + '\n  ';
+  likeButton.innerHTML = '\n    ' + _icons.heart + '\n    ' + (likedReaction ? '更改结果' : '我觉得OK') + '\n    ' + (meta.reactions && meta.reactions.heart ? ' (\u6709 <strong>' + meta.reactions.heart + '</strong> \u53EA\u8BC4\u59D4\u89C9\u5F97OK)' : '') + '\n  ';
 
   if (likedReaction) {
     likeButton.classList.add('liked');
@@ -3505,7 +3505,7 @@ function renderHeader(_ref, instance) {
   container.appendChild(likeButton);
 
   var commentsCount = document.createElement('span');
-  commentsCount.innerHTML = '\n    ' + (meta.comments ? '   \u2022  \u6709 <strong>' + meta.comments + '</strong> \u53EA\u8BC4\u59D4' : '') + '\n  ';
+  commentsCount.innerHTML = '\n    ' + (meta.comments ? ' / \u5171\u6709 <strong>' + meta.comments + '</strong> \u53EA\u8BC4\u59D4' : '') + '\n  ';
   container.appendChild(commentsCount);
 
   var issueLink = document.createElement('a');
