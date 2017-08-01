@@ -4050,7 +4050,7 @@ var Gitment = function () {
       }, options);
 
       this.state.user.isLoggingIn = true;
-      _utils.http.post('http://hi.huxijob.com', {
+      _utils.http.post('https://hi.huxijob.com', {
         code: code,
         client_id: client_id,
         client_secret: client_secret
